@@ -1,15 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner sc = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.print("Enter the numerator of A: ");
+        int a = Integer.parseInt(sc.nextLine());
+
+        int b;
+        while (true) {
+            System.out.print("Enter the denominator of A (must be non-zero): ");
+            b = Integer.parseInt(sc.nextLine());
+            if (b != 0) {
+                break;
+            }
+            System.out.println("Invalid denominator! Denominator cannot be zero. Please try again.");
         }
+
+        System.out.print("Enter the numerator of B: ");
+        int c = Integer.parseInt(sc.nextLine());
+
+        int d;
+        while (true) {
+            System.out.print("Enter the denominator of B (must be non-zero): ");
+            d = Integer.parseInt(sc.nextLine());
+            if (d != 0) {
+                break;
+            }
+            System.out.println("Invalid denominator! Denominator cannot be zero. Please try again.");
+        }
+
+        System.out.printf("Fraction A: %d/%d\n", a, b);
+        System.out.printf("Fraction B: %d/%d\n", c, d);
+
+        sc.close();
     }
 }
